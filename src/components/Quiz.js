@@ -1,23 +1,46 @@
 import React from "react";
-import {useState} from 'react';
+import {useState,useContext} from 'react';
 import {Questions} from "./Helpers/QuestionBank";
+import{QuizContext} from "../Helpers/Context"
 
 
 function Quiz () {
+  const{score,setScore,setGameState} = useContext(QuizContext);
+
   const[currQuestion,setCurrQuestion] = useState(0);
   const[optionChosen,setOptionChosen] =useState("");
+
+  const nextQuestion = () =>{
+    if (Questions[currQuestion].answer == optionChosen){
+      setScore(score+1);
+    }
+    setCurrQuestion(currQuestion+1);
+  };
+
+  const finishQuiz  = () =>{
+    if (Questions[currQuestion].answer == optionChosen){
+      setScore(score+1);
+    }
+    setGameState("EndScreen");
+  }
 
 return(
 
     <div className="quiz">
   <h1>{Questions[currQuestion].prompt}</h1>
   <div className="option">
-    <button>{Questions[currQuestion].optionA}</button>
-    <button>{Questions[currQuestion].optionB}</button>
-    <button>{Questions[currQuestion].optionC}</button>
-    <button>{Questions[currQuestion].optionD}</button>
+    <button onChange={()=>setOptionChosen("A")}>{Questions[currQuestion].optionA}</button>
+    <button onChange={()=>setOptionChosen("B")}>{Questions[currQuestion].optionB}</button>
+    <button onChange={()=>setOptionChosen("C")}>{Questions[currQuestion].optionC}</button>
+    <button onChange={()=>setOptionChosen("D")}>{Questions[currQuestion].optionD}</button>
    </div>
-   <button>Next QuestionBank</button>
+
+   {currQuestion == Questions.length-1 ? (
+    <button onClick={finishQuiz}>Finish Quiz</button>
+   ):(
+   <button onClick = {nextQuestion}>Next QuestionBank</button>
+
+   )}
     </div>
     );
 };
