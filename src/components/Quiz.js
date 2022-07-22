@@ -1,11 +1,12 @@
 import React from "react";
+import '../app.css';
 import {useState,useContext} from 'react';
 import {Questions} from "./Helpers/QuestionBank";
 import{QuizContext} from "../Helpers/Context"
 
 
 function Quiz () {
-  const{score,setScore,setGameState} = useContext(QuizContext);
+  const{score,setScore,gameState,setGameState} = useContext(QuizContext);
 
   const[currQuestion,setCurrQuestion] = useState(0);
   const[optionChosen,setOptionChosen] =useState("");
@@ -27,8 +28,8 @@ function Quiz () {
 return(
 
     <div className="quiz">
-  <h1>{Questions[currQuestion].prompt}</h1>
-  <div className="option">
+    <h1>{Questions[currQuestion].prompt}</h1>
+    <div className="option">
     <button onChange={()=>setOptionChosen("A")}>{Questions[currQuestion].optionA}</button>
     <button onChange={()=>setOptionChosen("B")}>{Questions[currQuestion].optionB}</button>
     <button onChange={()=>setOptionChosen("C")}>{Questions[currQuestion].optionC}</button>

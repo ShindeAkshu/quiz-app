@@ -67,4 +67,12 @@ button :hover{
   text-align: center;
 }
 
+#nextQuestion{
+  width:200px;
+}
+
+h3{
+  color: aliceblue;
+}
+
 
