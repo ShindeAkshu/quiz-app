@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import{QuizContext} from "../Helpers/Context"
 import {useState} from 'react';
 import '../App.css';
-import {QuizContext} from "../Helpers/Context"
+
 
 function MainMenu () {
     const{ gameState,setGameState,userName,setUserName}=useContext(QuizContext);

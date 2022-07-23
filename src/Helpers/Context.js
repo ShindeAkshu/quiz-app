@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export default QuizContext = createContext();
+export const QuizContext = createContext();

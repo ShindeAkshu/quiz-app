@@ -1,7 +1,7 @@
 import React from "react";
-import '../app.css';
+import '../App.css';
 import {useState,useContext} from 'react';
-import {Questions} from "./Helpers/QuestionBank";
+import { Questions } from "../Helpers/QuestionBank";
 import{QuizContext} from "../Helpers/Context"
 
 

@@ -20,19 +20,25 @@
   align-items: center;
   
 }
+button{
+
+}
 
 .menu input, button{
-  width: 300px;
+  width: 200px;
   height: 50px;
   margin: 5px;
   border: 1px solid white;
   border-radius: 10px;
   font-size: medium;
-  color: white;
+  color: black;
 }
+
+
 
 button :hover{
   background-color: rgb(22, 21, 20);
+ 
   color: white;
   cursor: pointer;
 }
@@ -48,6 +54,7 @@ button :hover{
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: black;
 }
 
 .menu, .quiz, .EndScreen{
@@ -72,7 +79,7 @@ button :hover{
 }
 
 h3{
-  color: aliceblue;
+  color: black;
 }
 
 
