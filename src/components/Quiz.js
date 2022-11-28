@@ -11,6 +11,10 @@ function Quiz () {
   const[currQuestion,setCurrQuestion] = useState(0);
   const[optionChosen,setOptionChosen] =useState("");
 
+  const chooseOption = (option) => {
+        setOptionChosen(option);
+  }
+
   const nextQuestion = () =>{
     if (Questions[currQuestion].answer == optionChosen){
       setScore(score+1);
@@ -39,7 +43,7 @@ return(
    {currQuestion == Questions.length-1 ? (
     <button onClick={finishQuiz}>Finish Quiz</button>
    ):(
-   <button onClick = {nextQuestion}>Next QuestionBank</button>
+   <button onClick = {nextQuestion} id="nextQuestion">Next QuestionBank</button>
 
    )}
     </div>

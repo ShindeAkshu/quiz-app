@@ -20,9 +20,7 @@
   align-items: center;
   
 }
-button{
 
-}
 
 .menu input, button{
   width: 200px;
@@ -38,7 +36,7 @@ button{
 
 button :hover{
   background-color: rgb(22, 21, 20);
- 
+
   color: white;
   cursor: pointer;
 }
@@ -57,8 +55,8 @@ button :hover{
   color: black;
 }
 
-.menu, .quiz, .EndScreen{
-  color: white;
+.menu, .quiz, .EndScreen h1{
+  color: black;
 }
 
 .EndScreen{
@@ -66,7 +64,7 @@ button :hover{
   flex-direction: column;
   height: 500px;
   width: 500px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 10px;
   background-color: mediumpurple;
   justify-content: center;
