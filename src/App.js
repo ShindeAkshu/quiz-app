@@ -1,7 +1,7 @@
  
 import './App.css';
 import React from 'react';
-import { useState , useContext} from 'react';
+import { useState } from 'react';
 import MainMenu from './components/MainMenu';
 import Quiz from './components/Quiz';
 import EndScreen from './components/EndScreen'
@@ -16,8 +16,8 @@ const[score,setScore]=useState(0);
       <h1>Quiz App</h1>
       <QuizContext.Provider value ={{gameState,setGameState,userName,setUserName,score,setScore}}>
       {gameState === "menu" && <MainMenu/>}
-      {gameState === "quiz" && <Quiz/>}
-      {gameState === "endscreen" && <EndScreen/>}
+      {gameState === "playing" && <Quiz/>}
+      {gameState === "finished" && <EndScreen/>}
       </QuizContext.Provider>
     </div>
   );
